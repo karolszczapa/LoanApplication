@@ -1,0 +1,32 @@
+loan:
+  interest: 0.1
+  constraints:
+    min-amount: 100
+    max-amount: 10000
+    max-amount-rejection-min-time: 00:00:00
+    max-amount-rejection-max-time: 06:00:00
+    min-term-in-days: 30
+    max-term-in-days: 180
+
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /console
+      settings:
+        trace: false
+        web-allow-others: false
+  datasource:
+    url: jdbc:h2:mem:loan_db
+    driverClassName: org.h2.Driver
+    username: admin
+    password: pwd
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        use_sql_comments: true
+        format_sql: true

@@ -1,0 +1,16 @@
+###
+GET http://localhost/goose-bff-service/info
+
+###
+POST http://localhost:8080/loan/apply
+Content-Type: application/json
+
+{
+ "amount" : 100,
+ "from": "2022-03-06T00:00:00",
+ "termInDays" : 90,
+ "person": {
+ "firstname" : "Charles",
+ "surname": "Splinter"
+ }
+}
